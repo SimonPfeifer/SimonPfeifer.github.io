@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://SimonPfeifer.github.io',
+    site: 'https://simonpfeifer.github.io',
     integrations: [mdx(), sitemap(), tailwind()],
     markdown: {
         shikiConfig: {
