@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
-import TagLink from "./TagLink.astro";
 
 const posts = await getCollection("blog");
 let numberOfPostsToDisplay = 3;
@@ -14,16 +13,10 @@ let recentPosts = posts.slice(0, numberOfPostsToDisplay);
     recentPosts.map((post) => (
       <div class="flex gap-2 justify-between border-b pb-4">
         <div class="flex flex-col gap-4">
-          {/* <p>{post.data.pubDate}</p> */}
           <FormattedDate date={post.data.pubDate} />
           <a class="font-bold text-lg" href={`/blog/${post.slug}`}>
             {post.data.title}
           </a>
-          <div class="flex gap-2">
-              {post.data.tags?.map((i) => {
-                return <TagLink tag={i} />;
-              })}
-          </div>
         </div>
         <a href={`/blog/${post.slug}`}>
           <img
