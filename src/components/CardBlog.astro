@@ -1,0 +1,41 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+   title: string;
+   description: string;
+   slug: string;
+}
+
+const imageDir = "/src/content/images/";
+const { imagePath, altText, title, description, slug } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/images/*.{jpeg,jpg,png,gif}');
+if (!images[imageDir+imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/content/images/*.{jpeg,jpg,png,gif}"`);
+
+// Define classes to be used with the Image component
+const imageClass =
+  "absolute inset-0 h-4/5 w-full object-cover object-center rounded-none";
+---
+
+
+<!-- A clickable card that leads to the details of the post-->
+<a
+  href={"/blog/" + slug}
+  data-astro-prefetch
+  class="group relative inset-0 flex h-72 w-60 border items-end overflow-hidden rounded-xl transition duration-[300ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-105 md:h-80 "
+>
+
+<!-- The post's main image -->
+<div>
+    <Image src={images[imageDir+imagePath]()} alt={altText} class={imageClass}/>
+</div>
+
+<!-- The post's title -->
+<span class="absolute mb-2 ml-4 inline-block text-m font-bold">
+    {title}
+</span>
+
+</a>

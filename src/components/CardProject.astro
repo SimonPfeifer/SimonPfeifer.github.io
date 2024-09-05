@@ -1,0 +1,45 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+   title: string;
+   description: string;
+   slug: string;
+}
+
+const imageDir = "/src/content/images/";
+const { imagePath, altText, title, description, slug } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/images/*.{jpeg,jpg,png,gif}');
+if (!images[imageDir+imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/content/images/*.{jpeg,jpg,png,gif}"`);
+
+// Define classes to be used with the Image component
+const imageClass =
+  "object-cover object-center rounded-none";
+---
+
+
+<!-- A clickable card that leads to the details of the post-->
+<!-- class="group relative inset-0 flex h-max w-80 border items-end overflow-hidden rounded-xl transition duration-[300ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-105 md:h-80 " -->
+<a
+  href={"/projects/" + slug}
+  data-astro-prefetch
+  class="group relative border rounded-2xl overflow-hidden dark:bg-neutral-800 transition duration-[300ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-105"
+>
+<div class="flex max-w-6xl flex-col items-center p-0 bg-inherit lg:flex-row">
+
+  <!-- Text -->
+  <div class="flex w-full flex-col space-y-4 p-2 lg:mt-0 lg:w-1/2">
+    <h2 class="text-left text-xl font-bold">{title}</h2>
+    <p class="text-xs">{description} </p>
+  </div>
+
+  <!-- Image -->
+  <div class="w-full lg:w-1/2">
+    <Image src={images[imageDir+imagePath]()} alt={altText} class={imageClass}/>
+  </div>
+
+</div>
+</a>

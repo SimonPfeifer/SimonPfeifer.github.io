@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+
+const { src, description = ''} = Astro.props
+---
+
+<Image
+    src={src}
+    alt="Astronaut"
+    inferSize={true}
+/>
+<p class="italic text-s text-gray-600 dark:text-neutral-400">
+    {description}
+</p>
