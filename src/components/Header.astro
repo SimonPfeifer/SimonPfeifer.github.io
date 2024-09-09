@@ -5,15 +5,15 @@ import { SITE_TITLE } from "../consts";
 
 <header class="lg:flex py-4 pt-2 px-4 sm:px-0 xl:px-0 md:pt-10 gap-5 mb-10 lg:mb-10 w-full">
   <Astronav>
-    <div class="flex w-full justify-between items-end border-b lg:border-none pb-4 lg:pb-0">
+    <div id="header" class="flex w-full justify-between items-end border-b lg:border-none pb-4 lg:pb-0">
       <a class="font-semibold text-xl flex gap-2 items-center group" href="/"> {SITE_TITLE}</a>
     </div>
     <MenuItems class="lg:flex">
       <ul class="flex flex-row gap-5 mt-0 pb-0 border-b border-neutral-400 lg:border-b-0">
-        <li class="flex items-center"><a href="/blog">Blog</a></li>
-  	  	<li class="flex items-center"><a href="/projects">Projects</a></li>
-        <li class="flex items-center"><a href="/about">About</a></li>
-        <li class="flex items-center"><a href="/cv">CV</a></li>
+        <li id="header" class="flex items-center"><a href="/blog">Blog</a></li>
+  	  	<li id="header" class="flex items-center"><a href="/projects">Projects</a></li>
+        <li id="header" class="flex items-center"><a href="/about">About</a></li>
+        <li id="header" class="flex items-center"><a href="/cv">CV</a></li>
       </ul>
     </MenuItems>
   </Astronav>

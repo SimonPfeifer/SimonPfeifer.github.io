@@ -22,7 +22,8 @@ const imageClass =
 
 
 <!-- A clickable card that leads to the details of the post-->
-<a
+<div id="header">
+<a id="header"
   href={"/blog/" + slug}
   data-astro-prefetch
   class="group relative inset-0 flex h-72 w-60 border items-end overflow-hidden rounded-xl transition duration-[300ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-105 md:h-80 "
@@ -39,3 +40,4 @@ const imageClass =
 </span>
 
 </a>
+</div>
