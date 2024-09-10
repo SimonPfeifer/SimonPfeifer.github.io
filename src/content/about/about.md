@@ -10,14 +10,14 @@ Ever since University I've had an interest in programming, which is what this we
 
 When I'm not busy doing the above, I like to play video games of all kinds. My mainstay here is Rocket League which I've been playing since 2016; peaked at around 1600 MMR. I also love to go hiking and camping, and drawing when I get the chance.
 
-<div class="flex float-none mb-10 gap-x-5">
+<div class="flex float-none mt-10 gap-x-5">
   <a href="mailto: simonpfeifer64@gmail.com" target="_blank">
-    <img src="/src/content/images/radix-icons--envelope-closed.png" width="50" height="50">
+    <span class="radix-icons--envelope-closed"></span>
   </a>
   <a href="https://github.com/SimonPfeifer" target="_blank">
-    <img src="/src/content/images/radix-icons--github-logo.png" width="50" height="50">
+    <span class="radix-icons--github-logo"></span>
   </a>
   <a href="https://www.linkedin.com/in/simonpfeifer" target="_blank">
-    <img src="/src/content/images/radix-icons--linkedin-logo.png" width="50" height="50">
+    <span class="radix-icons--linkedin-logo"></span>
   </a>
 </div>
