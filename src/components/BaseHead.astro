@@ -43,18 +43,10 @@ const { title, description, image = '/src/content/images/src/content/images/blog
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
+    return "dark";
   })();
 
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
+  document.documentElement.classList.add("dark");
   window.localStorage.setItem("theme", theme);
-
 
   </script>
