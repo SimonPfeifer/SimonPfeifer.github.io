@@ -8,9 +8,26 @@ a {
     text-decoration: none;
 }
 
+a:link {
+    color: #3f84e4;
+}
+
+a:visited {
+    color: #3f84e4;
+}
+
 a:hover {
     text-decoration: underline;
 }
+
+#header a:link {
+    color: #ffffff;
+}
+
+#header a:visited {
+    color: #dddddd;
+}
+
 
 img {
     @apply rounded-lg;

@@ -22,7 +22,7 @@ const imageClass =
 
 
 <!-- A clickable card that leads to the details of the post-->
-<!-- class="group relative inset-0 flex h-max w-80 border items-end overflow-hidden rounded-xl transition duration-[300ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-105 md:h-80 " -->
+<div id="header" class="flex">
 <a
   href={"/projects/" + slug}
   data-astro-prefetch
@@ -30,16 +30,17 @@ const imageClass =
 >
 <div class="flex max-w-6xl flex-col items-center p-0 bg-inherit lg:flex-row">
 
-  <!-- Text -->
+<!-- Title and description -->
   <div class="flex w-full flex-col space-y-4 p-2 lg:mt-0 lg:w-1/2">
     <h2 class="text-left text-xl font-bold">{title}</h2>
     <p class="text-xs">{description} </p>
   </div>
 
-  <!-- Image -->
+    <!-- Image -->
   <div class="w-full lg:w-1/2">
     <Image src={images[imageDir+imagePath]()} alt={altText} class={imageClass}/>
   </div>
 
 </div>
 </a>
+</div>
