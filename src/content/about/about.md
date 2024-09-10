@@ -1,6 +1,7 @@
 ---
 title: 'About Me'
 description: ''
+pubDate: 01 Sept 2024
 heroImage: 'blog-placeholder-2.jpg'
 ---
 My name is Simon Pfeifer, I was born in the south of Germany and moved to the north of England when I was 12 years old. I studied Astrophysics and completed my PhD in 2020. Since then I have worked as a post-doctoral research scientist in Potsdam, Germany until 2024. My work largely focused on running computer simulations of the Universe to model the distribution and masses of galaxies in our "local" patch of space.
