@@ -1,16 +1,17 @@
 ---
-import ProjectPost from '../../layouts/ProjectPost.astro';
+import AboutPost from '../../layouts/AboutPost.astro';
 
 import {frontmatter as post} from '../../content/about/about.md';
 import {Content} from '../../content/about/about.md';
 ---
 
-<ProjectPost 
+<AboutPost
   title={post.title}
   description={post.description}
   pubDate={post.pubDate}
   heroImage={post.heroImage}
+  active={true}
 >
 	<Content />
-</ProjectPost>
+</AboutPost>
 

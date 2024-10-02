@@ -10,10 +10,10 @@ interface Props {
    slug: string;
 }
 
-const imageDir = "/src/content/images/";
-const { imagePath, altText, title, description, slug } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/images/*.{jpeg,jpg,png,gif}');
-if (!images[imageDir+imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/content/images/*.{jpeg,jpg,png,gif}"`);
+const imageDir = "/src/content/blog/";
+const { imagePath, altText, title, slug } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/blog/*/*.{jpeg,jpg,png,gif}');
+if (!images[imageDir+imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/content/blog/*/*.{jpeg,jpg,png,gif}"`);
 
 // Define classes to be used with the Image component
 const imageClass =

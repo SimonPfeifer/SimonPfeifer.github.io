@@ -11,7 +11,7 @@ type Post = CollectionEntry<"blog">;
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-
+const activePosts = posts.filter(post => post.data.active);
 ---
 
 <!doctype html>
@@ -27,7 +27,7 @@ const posts = (await getCollection("blog")).sort(
       </div>
       <div class="flex flex-row gap-x-4 flex-wrap">
         {
-          posts.map((post: Post) => (
+          activePosts.map((post: Post) => (
             <div class="flex gap-2 justify-between pb-6">
             <CardBlog 
               imagePath={post.data.heroImage}

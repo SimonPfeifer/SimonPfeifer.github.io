@@ -10,9 +10,9 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, heroImage } = Astro.props;
 
-const imageDir = "/src/content/images/";
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/images/*.{jpeg,jpg,png,gif}');
-if (!images[imageDir+heroImage]) throw new Error(`"${heroImage}" does not exist in glob: "/src/content/images/*.{jpeg,jpg,png,gif}"`);
+const imageDir = "/src/content/blog/";
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/blog/*/*.{jpeg,jpg,png,gif}');
+if (!images[imageDir+heroImage]) throw new Error(`"${heroImage}" does not exist in glob: "/src/content/blog/*/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <html lang="en" class="dark">
