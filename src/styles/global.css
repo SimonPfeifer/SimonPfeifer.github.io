@@ -28,12 +28,66 @@ a:hover {
     color: #dddddd;
 }
 
+/* Code Blocks and Inline Code */
+pre {
+    padding: 10px;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
 
+code {
+    padding: 4px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 100%;
+    color: #f6f6f4;
+    background-color: #282A36;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #f6f6f4;
+    background-color: #282A36;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #f6f6f4;
+    color: #f6f6f4;
+    background-color: #282A36;
+}
+
+th {
+    color: #f6f6f4;
+    background-color: #4b4d63;
+}
+
+/* Images */
 img {
     @apply rounded-lg;
     max-width: 100%;
     height: auto;
 }
+
+figcaption{
+    text-align: center;
+    font-style: italic;
+    font-size: medium;
+    padding-bottom: 5%;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
 
 /* Used in about.md*/
 .radix-icons--envelope-closed {

@@ -36,7 +36,7 @@ if (!images[imageDir+heroImage]) throw new Error(`"${heroImage}" does not exist 
             )
           }
         </div>
-        <div class="mt-10">
+        <div class="text-base text-justify mt-10">
           <slot />
         </div>
 
@@ -83,38 +83,6 @@ blockquote {
     color: #666;
     background-color: #f9f9f9;
     @apply dark:bg-neutral-700 text-white border-l-4 border-neutral-500; 
-}
-
-/* Code Blocks and Inline Code */
-
-pre {
-    padding: 10px;
-    overflow-x: auto;
-    margin-top: 0;
-    margin-bottom: 16px;
-}
-
-code {
-    padding: 2px 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 90%;
-}
-
-/* Tables */
-table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-    @apply dark:bg-neutral-700;
 }
 
 /* Lists */
