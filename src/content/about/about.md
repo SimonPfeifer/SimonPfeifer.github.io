@@ -17,7 +17,7 @@ When I'm not busy doing the above, I like to play video games of all kinds. My m
   <a href="https://github.com/SimonPfeifer" target="_blank">
     <span class="radix-icons--github-logo"></span>
   </a>
-  <a href="https://www.linkedin.com/in/simonpfeifer" target="_blank">
+  <a href="https://linkedin.com/in/simon-pfeifer-617904330" target="_blank">
     <span class="radix-icons--linkedin-logo"></span>
   </a>
 </div>
