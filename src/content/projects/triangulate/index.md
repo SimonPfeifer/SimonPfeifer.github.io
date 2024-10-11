@@ -67,8 +67,8 @@ One thing to note is that the performance is dependent on the image size; larger
 Here are some examples of the method in action. These images can all be found in the `example` directory in the repository.
 
 Here are 2 colour images with different values for the radial culling while keeping the corner threshold fixed at 25. Larger values increases the size of the triangles and effectively lowers the resolution of, or blurs, the image.
-<img src="/src/content/projects/triangulate/colour_25_15.jpg" alt="Low poly image with --radial 15" class="img-left"/>
+![Low poly image with --radial 15](./colour_25_15.jpg)
 <figcaption> A 1080p colour image with --radial 15.</figcaption>
 
-<img src="/src/content/projects/triangulate/colour_25_60.jpg" alt="Low poly image with --radial 60" class="img-right"/>
+![Low poly image with --radial 60](./colour_25_60.jpg)
 <figcaption> A 1080p colour image with --radial 60.</figcaption>
