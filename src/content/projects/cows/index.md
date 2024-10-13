@@ -1,5 +1,5 @@
 ---
-title: 'cows'
+title: 'COWS: COsmic Web Skeleton'
 description: 'A Python package to detect cosmic filaments.'
 pubDate: 'Oct 11 2024'
 heroImage: 'cows/cover.jpg'
