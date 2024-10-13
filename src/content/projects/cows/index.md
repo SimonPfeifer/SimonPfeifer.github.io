@@ -24,7 +24,7 @@ First, let's look at the problem at hand, the input data, to get a feel for what
 The method presented here, `COWS`, achieves this by applying a topological thinning algorithm called _medial axis thinning_ presented in [Lee, et al. (1994)](https://www.sciencedirect.com/science/article/abs/pii/S104996528471042X?via%3Dihub). In a nutshell, this algorithm takes a structure of cells and removes the outermost layers iteratively (the *thinning* part), following a set of rules that preserve topological properties, until only a central line (the *medial axis* part) remains. These types of algorithms are also called skeletonisation algorithms because they result in a structure that kind of looks like a plausible skeleton. Below is an example of this algorithm applied to the silhouette of a cow.
 
 <div class="flex justify-center">
-<img src="/src/content/projects/cows/cow_outline.jpg" width="70%" alt="Medial axis thinning applied to cow silhouette.">
+<img src="/src/content/projects/cows/cow_outline.jpg" width="70%" alt="Medial axis thinning applied to cow silhouette." />
 </div>
 <figcaption> The medial axis thinning (or skeletonisation) applied to the silhouette of a cow. Notice that the topological properties, such as the number of holes (the one by the tail) and the connectivity (nothing is separated that was connected before, or vice versa), are preserved.</figcaption>
 
@@ -35,14 +35,14 @@ Now, if you have a look at the [Lee, et al. (1994)](https://www.sciencedirect.co
 Ok, let's actually apply this to our binary (filaments and knots) comic web data, below is the result. First of all, it's clear that that we have not achieved our goal; the complicated inter-connected structure of filaments is still present. And this is expected since the medial axis thinning conserves topological properties. However, we have greatly reduced the complexity of the problem. Instead of dealing with some arbitrary mass of cells, we now have a well defined structure made of lines that are one cell thick and connect at well defined location. We'll call the location where multiple lines meet *junctions*. However, we can also notice that there are artifacts in the output. These are large, hollow blobs which is where a few background cells have created a cavity in the input data. These cavities are preserved by the thinning and are undesirable.
 
 <div class="flex justify-center">
-<img src="/src/content/projects/cows/cows_blob.jpg" width="70%" alt="Medial axis thinning applied to cosmic web.">
+<img src="/src/content/projects/cows/cows_blob.jpg" width="70%" alt="Medial axis thinning applied to cosmic web." />
 </div>
 <figcaption> The medial axis thinning applied to the cosmic web data. The output in red is shown on top of the density. The network is still very connected and there are undesirable "blob" (e.g. see bottom right).</figcaption>
 
 So how do we separate this entangled mess of filaments? And what about these blobs? The good news is that both of these can be fixed with the same approach. We can find the number of neighbours for a given foreground cell within it's 3x3x3 neighbourhood. If it only has 2 neighbhours, it's part of a filament line. If it has more than 2, but less than 7 neighbours, it's a junction. Junctions can have at most 6 direct connections along its main axes (left, right, up, down, front and back) based on the medial axis thinning rules. If it has more than 6 neighbours then it is definitely part of one of the undesirable blobs. Now we simply remove all cells that have more than 2 neighbours and *voila*, the blobs are gone and we're left with individual filaments. These filaments have a well defines locations along what is often termed the spine of the filament, and well defined end points. 
 
 <div class="flex justify-center">
-<img src="/src/content/projects/cows/cows_no_blob.jpg" width="70%" alt="Medial axis thinning applied to cosmic web.">
+<img src="/src/content/projects/cows/cows_no_blob.jpg" width="70%" alt="Medial axis thinning applied to cosmic web." />
 </div>
 <figcaption> The final filaments after applying the medial axis thinning and removal of junctions and "blobs".</figcaption>
 
@@ -50,9 +50,7 @@ Finally, we can also aggregate these filaments into a catalogue that defines the
 
 And that's it! We can now use the filament catalogue to study the length distribution of filaments, or how many filaments connect to a galaxy cluster (called the *connectivity* of a cluster), or the distribution of galaxies along the spine, or in a radial direction away from the spine, or many, many other things.
 
-<div class="flex justify-center">
-<img src="/src/content/projects/cows/cows_final.png" width="100%" alt="Medial axis thinning applied to cosmic web.">
-</div>
+![COWS applied to high resolution data.](./cows_high_res.png)
 <figcaption> COWS applied to higher resolution data to see the results more clearly. Some of the filaments look short or still connected because of projection effects. This is a slice in 3D projected into 2D. </figcaption>
 
 
